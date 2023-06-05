@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularCRM';
+
+  fruit = {
+    color:'yellow',
+    type:'banana',
+    img:'https://img.ltwebstatic.com/images3_pi/2022/04/18/1650249706e97fb5cf1163381788c63003cbbb4148_thumbnail_600x.webp'
+  }
+
 }
