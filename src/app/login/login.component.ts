@@ -9,6 +9,10 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators }
 export class LoginComponent {
 
   loginForm: FormGroup;
+  errorMessagesEmail = {
+                required: 'il manque un email',
+                email:'email invalide'
+              };
 
   constructor(){
     this.loginForm = new FormGroup({

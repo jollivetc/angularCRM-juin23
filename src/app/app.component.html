@@ -5,3 +5,5 @@
 </mat-toolbar>
 <crm-login></crm-login>
 
+<crm-dummy label="hello" (clicked)="handleClicked($event)"></crm-dummy>
+<crm-dummy [label]="title" (clicked)="handleClicked($event)"></crm-dummy>
