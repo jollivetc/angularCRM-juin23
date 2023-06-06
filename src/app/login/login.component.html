@@ -1,0 +1,27 @@
+<form [formGroup]="loginForm">
+  <p>
+    <label for="email">
+      Email
+    </label>
+    <input id="email" type="text" formControlName="email">
+    <span *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors">
+      <span *ngIf="loginForm.get('email')?.errors?.['required']">
+        Il manque un email
+      </span>
+      <span *ngIf="loginForm.get('email')?.errors?.['email']">
+        email non valide
+      </span>
+    </span>
+  </p>
+  <p>
+    <label for="password">
+      Password
+    </label>
+    <input id="password" type="password" formControlName="password">
+  </p>
+  <p>
+    <button (click)="login()" [disabled]="loginForm.invalid">
+      Log In
+    </button>
+  </p>
+</form>
