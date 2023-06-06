@@ -14,4 +14,11 @@ export class AppComponent {
     img:'https://img.ltwebstatic.com/images3_pi/2022/04/18/1650249706e97fb5cf1163381788c63003cbbb4148_thumbnail_600x.webp'
   }
 
+  persons: string[]=['Paul', 'Pierre','Jacques']
+
+  counter:number=0;
+
+  onClick($event:MouseEvent):void{
+    this.counter= this.counter+1
+  }
 }

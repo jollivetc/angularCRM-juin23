@@ -3,3 +3,10 @@
   {{fruit.type}}
   <img [src]="fruit.img">
 </p>
+
+{{counter}}<button (click)="onClick($event)">Click me</button>
+
+<ul>
+  <li *ngFor="let person of persons">{{person}}</li>
+</ul>
+
