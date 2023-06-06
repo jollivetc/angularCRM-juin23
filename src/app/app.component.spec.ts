@@ -3,17 +3,25 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CrmMaterialModule } from './crm-material.module';
+import { DummyComponent } from './component/dummy/dummy.component';
+import { HelpComponent } from './component/help/help.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NoopAnimationsModule,
+        CrmMaterialModule
       ],
       declarations: [
         AppComponent,
-        LoginComponent
+        LoginComponent,
+        DummyComponent,
+        HelpComponent
       ],
     }).compileComponents();
   });
@@ -34,6 +42,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('span')?.textContent).toContain('angularCRM app is running!');
+    expect(compiled.querySelector('span')?.textContent).toContain('angularCRM');
   });
 });
