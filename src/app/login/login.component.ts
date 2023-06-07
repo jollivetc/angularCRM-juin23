@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { AuthenticationService } from './authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'crm-login',
@@ -15,7 +16,8 @@ export class LoginComponent {
                 email:'email invalide'
               };
 
-  constructor(private authentService:AuthenticationService){
+  constructor(private authentService:AuthenticationService, private router:Router){
+
     this.loginForm = new FormGroup({
       email:new FormControl('', [Validators.required, Validators.email]),
       password:new FormControl('', [Validators.required, no$InPassword])
@@ -25,7 +27,9 @@ export class LoginComponent {
   login():void{
     const user = this.authentService.authentUser(this.loginForm.value.email,
                                   this.loginForm.value.password)
-    console.log(user);
+    if(user){
+      this.router.navigateByUrl('/home');
+    }
   }
 }
 
