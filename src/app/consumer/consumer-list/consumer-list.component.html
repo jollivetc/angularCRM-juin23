@@ -1,1 +1,28 @@
-<p>consumer-list works!</p>
+<input type="text" (keyup)="doSearch()" [(ngModel)]="search">
+<span>
+  <a mat-icon-button matTooltip="add a new consumer"
+      routerLink="/consumers/new">
+    <mat-icon>person_add</mat-icon>
+  </a>
+</span>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>civilité</th>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th>email</th>
+    <th>telephone</th>
+    <th>actions</th>
+  </tr>
+  <tr *ngFor="let consumer of consumersObservable|async">
+    <td>{{consumer.id}}</td>
+    <td>{{consumer.civility}}</td>
+    <td>{{consumer.firstname}}</td>
+    <td>{{consumer.lastname}}</td>
+    <td>{{consumer.email}}</td>
+    <td>{{consumer.phone|phone}}</td>
+    <td></td>
+  </tr>
+</table>

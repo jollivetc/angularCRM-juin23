@@ -1,1 +1,36 @@
-<p>consumer-fiche works!</p>
+<form [formGroup]="consumerForm">
+  <p>
+    <mat-form-field>
+      <mat-label>civility</mat-label>
+      <mat-select formControlName="civility">
+        <mat-option value="Mr">Mr</mat-option>
+        <mat-option value="Mme">Mme</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Firstname</mat-label>
+      <input matInput type="text" formControlName="firstname">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Lastname</mat-label>
+      <input matInput type="text" formControlName="lastname">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>email</mat-label>
+      <input matInput type="text" formControlName="email">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>phone</mat-label>
+      <input matInput type="text" formControlName="phone">
+    </mat-form-field>
+  </p>
+  <button (click)="validate()" [disabled]="consumerForm.invalid">validate</button>
+</form>
