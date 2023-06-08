@@ -31,6 +31,7 @@ export class AuthenticationService {
 
   disconnect():void{
     this.user=undefined;
+    this.token = undefined
     sessionStorage.clear()
   }
 
