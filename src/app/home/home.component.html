@@ -6,3 +6,8 @@
 <p>
   <button (click)="testObservableAsync()">Async</button> {{obs|async}}
 </p>
+
+<ul>
+  <li *ngFor="let phoneNumber of phoneNumbers">{{phoneNumber|phone}}</li>
+</ul>
+

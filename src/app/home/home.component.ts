@@ -12,6 +12,8 @@ export class HomeComponent implements OnDestroy{
   obs?:Observable<number>;
   private subs:Subscription[]=[];
 
+  phoneNumbers = ['0123456789', '9876543210']
+
   constructor(private demoObservable:DemoObservableService){}
 
   ngOnDestroy(): void {
