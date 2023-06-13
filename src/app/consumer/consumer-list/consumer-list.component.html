@@ -23,6 +23,19 @@
     <td>{{consumer.lastname}}</td>
     <td>{{consumer.email}}</td>
     <td>{{consumer.phone|phone}}</td>
-    <td></td>
+    <td>
+      <span>
+        <a mat-icon-button matTooltip="édition"
+            [routerLink]="['/consumers',consumer.id]">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </span>
+      <span>
+        <a mat-icon-button matTooltip="delete"
+            (click)="delete(consumer.id!)">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </span>
+    </td>
   </tr>
 </table>
